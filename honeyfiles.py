@@ -2,10 +2,10 @@ import random
 
 class honeypot_generator():
     def __init__(self):
-        self.fname_file = 'random-name/first-names.txt'
-        self.mname_file = 'random-name/middle-names.txt'
-        self.lname_file = 'random-name/names.txt'
-        self.cstate_file = 'USA/us_cities_states_counties.csv'
+        self.fname_file = 'first-names.txt'
+        self.mname_file = 'middle-names.txt'
+        self.lname_file = 'names.txt'
+        self.cstate_file = 'us_cities_states_counties.csv'
         self.output_dir = 'zip'
 
         self.fname_obj = open(self.fname_file, 'r')
@@ -133,7 +133,6 @@ class honeypot_generator():
                 if 12 <= pos <= 24:
                     if ref_pos_count > 1 and ref_addr_count > 2:
                         fake_addr = f"{suite_type} {ref_pos[0]} {ref_addr[0]}, {ref_addr[1]}"
-
 
             print(f"{fake_addr}")
 
