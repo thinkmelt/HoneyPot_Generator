@@ -1,4 +1,6 @@
 import random
+import openpyxl
+from openpyxl import Workbook
 
 class honeypot_generator():
     def __init__(self):
@@ -135,6 +137,12 @@ class honeypot_generator():
                         fake_addr = f"{suite_type} {ref_pos[0]} {ref_addr[0]}, {ref_addr[1]}"
 
             print(f"{fake_addr}")
+    def gen_rand_Excel(self, tfile):
+        wb = Workbook()
+        wb.create_sheet('testsheet')
+        wb['testsheet'].title = 'bob'
+        wb['A1'].value = 'bob'
+        wb.save(tfile)
 
 hp_gen = honeypot_generator()
 for x in range(100):
